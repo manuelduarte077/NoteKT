@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "dev.donmanuel.note"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.donmanuel.note"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
 
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.text.google.fonts)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
