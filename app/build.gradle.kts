@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.room)
     alias(libs.plugins.ksp)
+    id("com.google.firebase.crashlytics")
 }
 
 room {
@@ -88,4 +89,9 @@ dependencies {
 
     //Libreria Serializacion
     implementation(libs.kotlinx.serialization.json)
+
+    //Librerias Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
 }
