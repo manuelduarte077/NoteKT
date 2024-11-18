@@ -1,5 +1,7 @@
 package com.manuelduarte077.notyapp.presentation.screens.home
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -20,6 +22,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
+@RequiresApi(Build.VERSION_CODES.O)
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
