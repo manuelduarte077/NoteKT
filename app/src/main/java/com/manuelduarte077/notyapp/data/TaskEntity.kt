@@ -9,7 +9,7 @@ import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
 
-@Entity(tableName = "tasks")
+@Entity(tableName = "notes")
 data class TaskEntity(
     @PrimaryKey(autoGenerate = false)
     val id: String,

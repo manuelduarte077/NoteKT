@@ -12,6 +12,9 @@ import androidx.navigation.toRoute
 import com.manuelduarte077.notyapp.domain.Task
 import com.manuelduarte077.notyapp.domain.TaskLocalDataSource
 import com.manuelduarte077.notyapp.presentation.navigation.TaskScreenDes
+import com.manuelduarte077.notyapp.presentation.screens.detail.ActionTask
+import com.manuelduarte077.notyapp.presentation.screens.detail.TaskEvent
+import com.manuelduarte077.notyapp.presentation.screens.detail.TaskScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.launchIn

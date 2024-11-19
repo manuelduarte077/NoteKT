@@ -1,4 +1,4 @@
-package com.juandgaines.todoapp.presentation.screens.detail
+package com.manuelduarte077.notyapp.presentation.screens.detail
 
 import androidx.compose.foundation.text.input.TextFieldState
 import com.manuelduarte077.notyapp.domain.Category

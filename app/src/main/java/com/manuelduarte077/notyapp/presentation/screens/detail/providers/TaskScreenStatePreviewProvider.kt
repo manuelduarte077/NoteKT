@@ -4,9 +4,9 @@ import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.manuelduarte077.notyapp.domain.Category.OTHER
 import com.manuelduarte077.notyapp.domain.Category.WORK
-import com.juandgaines.todoapp.presentation.screens.detail.TaskScreenState
+import com.manuelduarte077.notyapp.presentation.screens.detail.TaskScreenState
 
-class TaskScreenStatePreviewProvider:PreviewParameterProvider<TaskScreenState> {
+class TaskScreenStatePreviewProvider : PreviewParameterProvider<TaskScreenState> {
     override val values: Sequence<TaskScreenState>
         get() = sequenceOf(
             TaskScreenState(

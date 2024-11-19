@@ -37,19 +37,19 @@ fun SummaryInfo(
         Animatable(0f)
     }
 
-    LaunchedEffect (completedTasks,totalTask){
+    LaunchedEffect(completedTasks, totalTask) {
         if (totalTask == 0) {
             angleRatio.animateTo(
                 targetValue = 0f
             )
             return@LaunchedEffect
         }
-         angleRatio.animateTo(
+        angleRatio.animateTo(
             targetValue = (completedTasks.toFloat() / totalTask.toFloat()),
-             animationSpec = tween(
-                 durationMillis = 300
-             )
-         )
+            animationSpec = tween(
+                durationMillis = 300
+            )
+        )
     }
 
     Row(
@@ -100,7 +100,7 @@ fun SummaryInfo(
                     )
                 )
 
-                if(completedTasks<= totalTask){
+                if (completedTasks <= totalTask) {
                     drawArc(
                         color = progress,
                         startAngle = 90f,
@@ -116,7 +116,7 @@ fun SummaryInfo(
             }
 
             Text(
-                text = "${(completedTasks/totalTask.toFloat()).times(100).toInt()}%",
+                text = "${(completedTasks / totalTask.toFloat()).times(100).toInt()}%",
                 style = MaterialTheme.typography.headlineLarge,
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold

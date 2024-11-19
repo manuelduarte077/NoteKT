@@ -14,9 +14,9 @@ class AppModule {
 
     @Provides
     @Named("dispatcherIO")
-    fun provideDispatcherIO():CoroutineDispatcher = Dispatchers.IO
+    fun provideDispatcherIO(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
     @Named("dispatcherMain")
-    fun provideDispatcherMain():CoroutineDispatcher = Dispatchers.Main
+    fun provideDispatcherMain(): CoroutineDispatcher = Dispatchers.Main
 }

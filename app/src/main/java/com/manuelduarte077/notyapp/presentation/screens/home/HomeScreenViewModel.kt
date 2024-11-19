@@ -27,9 +27,9 @@ import javax.inject.Inject
 class HomeScreenViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     private val taskLocalDataSource: TaskLocalDataSource
-):ViewModel() {
+) : ViewModel() {
 
-    var state by   mutableStateOf(HomeDataState())
+    var state by mutableStateOf(HomeDataState())
         private set
 
     private val eventChannel = Channel<HomeScreenEvent>()
@@ -43,7 +43,7 @@ class HomeScreenViewModel @Inject constructor(
             }
         )
 
-        taskLocalDataSource.tasksFlow.onEach { tasks->
+        taskLocalDataSource.tasksFlow.onEach { tasks ->
 
             val completedTasks = tasks
                 .filter { task -> task.isCompleted }
@@ -68,14 +68,15 @@ class HomeScreenViewModel @Inject constructor(
     }
 
 
-    fun onAction(action: HomeScreenAction){
+    fun onAction(action: HomeScreenAction) {
         viewModelScope.launch {
-            when(action){
+            when (action) {
 
                 is OnDeleteTask -> {
                     taskLocalDataSource.removeTask(action.task)
                     eventChannel.send(HomeScreenEvent.DeletedTask)
                 }
+
                 is OnToggleTask -> {
                     val updatedTask = action.task.copy(isCompleted = !action.task.isCompleted)
                     taskLocalDataSource.updateTask(updatedTask)
@@ -87,7 +88,7 @@ class HomeScreenViewModel @Inject constructor(
                     eventChannel.send(HomeScreenEvent.AllTaskDeleted)
                 }
 
-                else-> Unit
+                else -> Unit
             }
         }
     }

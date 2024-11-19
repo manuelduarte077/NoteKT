@@ -3,7 +3,7 @@ package com.manuelduarte077.notyapp.domain
 import com.manuelduarte077.notyapp.domain.Task
 import kotlinx.coroutines.flow.Flow
 
-interface TaskLocalDataSource{
+interface TaskLocalDataSource {
     val tasksFlow: Flow<List<Task>>
     suspend fun addTask(task: Task)
     suspend fun updateTask(updatedTask: Task)

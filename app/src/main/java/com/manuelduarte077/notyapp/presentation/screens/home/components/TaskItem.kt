@@ -29,12 +29,12 @@ import com.manuelduarte077.notyapp.ui.theme.NoteTheme
 @Composable
 fun TaskItem(
     modifier: Modifier = Modifier,
-    onClickItem:(String) -> Unit,
-    onDeleteItem:(String) -> Unit,
-    onToggleCompletion:(Task) -> Unit,
+    onClickItem: (String) -> Unit,
+    onDeleteItem: (String) -> Unit,
+    onToggleCompletion: (Task) -> Unit,
     task: Task,
 ) {
-    Row (
+    Row(
         modifier = modifier
             .clickable {
                 onClickItem(task.id)
@@ -42,10 +42,9 @@ fun TaskItem(
             .background(
                 color = MaterialTheme.colorScheme.surfaceContainer,
             )
-            .padding(horizontal = 8.dp)
-        ,
+            .padding(horizontal = 8.dp),
         verticalAlignment = Alignment.CenterVertically
-    ){
+    ) {
         Checkbox(
             checked = task.isCompleted,
             onCheckedChange = {
@@ -54,28 +53,30 @@ fun TaskItem(
                 )
             },
         )
-        Column (
+        Column(
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.spacedBy(
                 4.dp
             ),
-            modifier = Modifier.padding(
-                8.dp
-            ).weight(
-                1f
-            )
-        ){
+            modifier = Modifier
+                .padding(
+                    8.dp
+                )
+                .weight(
+                    1f
+                )
+        ) {
             Text(
                 text = task.title,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.titleSmall.copy(
-                    textDecoration = if(task.isCompleted) TextDecoration.LineThrough else TextDecoration.None
+                    textDecoration = if (task.isCompleted) TextDecoration.LineThrough else TextDecoration.None
                 ),
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
-            if(!task.isCompleted){
+            if (!task.isCompleted) {
                 task.description?.let {
                     Text(
                         text = it,

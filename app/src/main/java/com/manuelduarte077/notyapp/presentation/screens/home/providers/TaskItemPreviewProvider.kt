@@ -5,7 +5,7 @@ import com.manuelduarte077.notyapp.domain.Category.OTHER
 import com.manuelduarte077.notyapp.domain.Category.WORK
 import com.manuelduarte077.notyapp.domain.Task
 
-class TaskItemPreviewProvider:PreviewParameterProvider<Task> {
+class TaskItemPreviewProvider : PreviewParameterProvider<Task> {
     override val values: Sequence<Task>
         get() = sequenceOf(
             Task(

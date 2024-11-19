@@ -49,6 +49,9 @@ import androidx.compose.ui.unit.dp
 import com.manuelduarte077.notyapp.domain.Category
 import com.juandgaines.todoapp.presentation.screens.detail.providers.TaskScreenStatePreviewProvider
 import com.manuelduarte077.notyapp.R
+import com.manuelduarte077.notyapp.presentation.screens.detail.ActionTask
+import com.manuelduarte077.notyapp.presentation.screens.detail.TaskEvent
+import com.manuelduarte077.notyapp.presentation.screens.detail.TaskScreenState
 import com.manuelduarte077.notyapp.ui.theme.NoteTheme
 
 @Composable
@@ -63,14 +66,14 @@ fun TaskScreenRoot(
 
     LaunchedEffect(true) {
         event.collect { event ->
-            when(event){
+            when (event) {
                 is TaskEvent.TaskCreated -> {
-                        Toast.makeText(
-                            context,
-                            context.getString(R.string.task_created),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        navigateBack()
+                    Toast.makeText(
+                        context,
+                        context.getString(R.string.task_created),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    navigateBack()
                 }
 
                 else -> {
@@ -87,10 +90,11 @@ fun TaskScreenRoot(
     TaskScreen(
         state = state,
         onAction = { action ->
-            when(action){
+            when (action) {
                 is ActionTask.Back -> {
                     navigateBack()
                 }
+
                 else -> {
                     viewModel.onAction(action)
                 }
@@ -114,7 +118,7 @@ fun TaskScreen(
         mutableStateOf(false)
     }
 
-    Scaffold (
+    Scaffold(
         topBar = {
             TopAppBar(
                 title = {
@@ -137,8 +141,8 @@ fun TaskScreen(
                 },
             )
         }
-    ){ padding->
-        Column (
+    ) { padding ->
+        Column(
             verticalArrangement = Arrangement.spacedBy(
                 8.dp
             ),
@@ -148,10 +152,10 @@ fun TaskScreen(
                 .padding(horizontal = 16.dp)
                 .imePadding()
 
-        ){
-            Row (
+        ) {
+            Row(
                 verticalAlignment = Alignment.CenterVertically
-            ){
+            ) {
                 Text(
                     text = stringResource(R.string.done),
                     style = MaterialTheme.typography.bodyMedium.copy(
@@ -178,7 +182,7 @@ fun TaskScreen(
                     modifier = Modifier.clickable {
                         isExpanded = true
                     }
-                ){
+                ) {
 
                     Text(
                         text = state.category?.toString() ?: stringResource(R.string.category),
@@ -193,10 +197,10 @@ fun TaskScreen(
                             )
                             .padding(8.dp)
                     )
-                    Box (
+                    Box(
                         modifier = Modifier.padding(8.dp),
                         contentAlignment = Alignment.Center
-                    ){
+                    ) {
                         Icon(
                             imageVector = Icons.Default.KeyboardArrowDown,
                             contentDescription = "Add Task",
@@ -249,13 +253,12 @@ fun TaskScreen(
                 lineLimits = TextFieldLineLimits.SingleLine,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .wrapContentHeight()
-                ,
+                    .wrapContentHeight(),
                 decorator = { innerTextField ->
-                    Column (
+                    Column(
                         modifier = Modifier.fillMaxWidth(),
-                    ){
-                        if(state.taskName.text.toString().isEmpty()){
+                    ) {
+                        if (state.taskName.text.toString().isEmpty()) {
                             Text(
                                 modifier = Modifier.fillMaxWidth(),
                                 text = stringResource(R.string.task_name),
@@ -266,8 +269,7 @@ fun TaskScreen(
                                     fontWeight = FontWeight.Bold
                                 )
                             )
-                        }
-                        else{
+                        } else {
                             innerTextField()
                         }
                     }
@@ -294,14 +296,16 @@ fun TaskScreen(
                     },
                 decorator = { innerTextField ->
                     Column {
-                        if(state.taskDescription.text.toString().isEmpty() && !isDescriptionFocus){
+                        if (state.taskDescription.text.toString()
+                                .isEmpty() && !isDescriptionFocus
+                        ) {
                             Text(
                                 text = stringResource(R.string.task_description),
                                 color = MaterialTheme.colorScheme.onSurface.copy(
                                     alpha = 0.5f
                                 )
                             )
-                        }else{
+                        } else {
                             innerTextField()
                         }
                     }
@@ -323,7 +327,7 @@ fun TaskScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(46.dp)
-            ){
+            ) {
                 Text(
                     text = stringResource(R.string.save),
                     style = MaterialTheme.typography.titleMedium,
@@ -341,7 +345,7 @@ fun TaskScreen(
 @Preview
 fun TaskScreenLightPreview(
     @PreviewParameter(TaskScreenStatePreviewProvider::class) state: TaskScreenState
-){
+) {
     NoteTheme {
         TaskScreen(
             state = state,
@@ -356,7 +360,7 @@ fun TaskScreenLightPreview(
 )
 fun TaskScreenDarkPreview(
     @PreviewParameter(TaskScreenStatePreviewProvider::class) state: TaskScreenState
-){
+) {
     NoteTheme {
         TaskScreen(
             state = state,

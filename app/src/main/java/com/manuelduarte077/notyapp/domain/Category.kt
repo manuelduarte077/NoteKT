@@ -6,7 +6,7 @@ enum class Category {
     SHOPPING,
     OTHER;
 
-   companion object {
+    companion object {
         fun fromOrdinal(ordinal: Int): Category? {
             return entries.find { it.ordinal == ordinal }
         }

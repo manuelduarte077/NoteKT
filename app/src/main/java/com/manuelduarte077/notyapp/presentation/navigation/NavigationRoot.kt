@@ -15,27 +15,27 @@ import com.manuelduarte077.notyapp.presentation.screens.home.HomeScreenViewModel
 import kotlinx.serialization.Serializable
 
 @Composable
-fun NavigationRoot (
+fun NavigationRoot(
     navController: NavHostController
-){
+) {
 
-    Box (
+    Box(
         modifier = Modifier.fillMaxSize()
     )
     {
         NavHost(
             navController = navController,
             startDestination = HomeScreenDes
-        ){
-            composable<HomeScreenDes>{
+        ) {
+            composable<HomeScreenDes> {
                 val homeScreenViewModel = hiltViewModel<HomeScreenViewModel>()
                 HomeScreenRoot(
                     viewModel = homeScreenViewModel,
                     navigateToTaskScreen = { taskId ->
                         navController.navigate(
                             TaskScreenDes(
-                            taskId = taskId
-                        )
+                                taskId = taskId
+                            )
                         )
                     }
                 )

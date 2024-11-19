@@ -5,7 +5,7 @@ import com.manuelduarte077.notyapp.domain.Category
 import com.manuelduarte077.notyapp.domain.Task
 import com.manuelduarte077.notyapp.presentation.screens.home.HomeDataState
 
-class HomeScreenPreviewProvider:PreviewParameterProvider<HomeDataState> {
+class HomeScreenPreviewProvider : PreviewParameterProvider<HomeDataState> {
     override val values: Sequence<HomeDataState>
         get() = sequenceOf(
             HomeDataState(
@@ -18,26 +18,26 @@ class HomeScreenPreviewProvider:PreviewParameterProvider<HomeDataState> {
 }
 
 val completedTask = mutableListOf<Task>()
-.apply {
-    repeat(20){
-        add(
-            Task(
-                id = it.toString(),
-                title = "Task $it",
-                description = "Description $it",
-                category = Category.WORK,
-                isCompleted = false
+    .apply {
+        repeat(20) {
+            add(
+                Task(
+                    id = it.toString(),
+                    title = "Task $it",
+                    description = "Description $it",
+                    category = Category.WORK,
+                    isCompleted = false
+                )
             )
-        )
+        }
     }
-}
 
 val pendingTask = mutableListOf<Task>()
     .apply {
-        repeat(20){
+        repeat(20) {
             add(
                 Task(
-                    id = (it+30).toString(),
+                    id = (it + 30).toString(),
                     title = "Task $it",
                     description = "Description $it",
                     category = Category.OTHER,

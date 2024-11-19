@@ -13,7 +13,7 @@ import javax.inject.Inject
 class RoomTaskLocalDataSource @Inject constructor(
     private val taskDao: TaskDao,
     private val dispatcherIO: CoroutineDispatcher = Dispatchers.IO
-): TaskLocalDataSource {
+) : TaskLocalDataSource {
     override val tasksFlow: Flow<List<Task>>
         get() = taskDao.getAllTasks().map {
             it.map { taskEntity -> taskEntity.toTask() }
@@ -36,10 +36,10 @@ class RoomTaskLocalDataSource @Inject constructor(
     }
 
     override suspend fun getTaskById(taskId: String): Task? = withContext(dispatcherIO) {
-       taskDao.getTaskById(taskId)?.toTask()
+        taskDao.getTaskById(taskId)?.toTask()
     }
 
-    override suspend fun removeAllTasks() = withContext(dispatcherIO){
+    override suspend fun removeAllTasks() = withContext(dispatcherIO) {
         taskDao.deleteAllTasks()
     }
 }
