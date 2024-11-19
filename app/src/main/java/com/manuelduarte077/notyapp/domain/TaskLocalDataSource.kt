@@ -1,6 +1,5 @@
 package com.manuelduarte077.notyapp.domain
 
-import com.manuelduarte077.notyapp.domain.Task
 import kotlinx.coroutines.flow.Flow
 
 interface TaskLocalDataSource {

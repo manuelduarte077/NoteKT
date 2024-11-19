@@ -76,13 +76,6 @@ fun TaskScreenRoot(
                     navigateBack()
                 }
 
-                else -> {
-                    Toast.makeText(
-                        context,
-                        context.getString(R.string.error_creating_task),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
             }
         }
     }
@@ -106,7 +99,6 @@ fun TaskScreenRoot(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskScreen(
-    modifier: Modifier = Modifier,
     state: TaskScreenState,
     onAction: (ActionTask) -> Unit
 ) {
