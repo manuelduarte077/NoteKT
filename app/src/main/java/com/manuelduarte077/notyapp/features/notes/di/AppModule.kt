@@ -1,4 +1,4 @@
-package com.manuelduarte077.notyapp.di
+package com.manuelduarte077.notyapp.features.notes.di
 
 import dagger.Module
 import dagger.Provides
