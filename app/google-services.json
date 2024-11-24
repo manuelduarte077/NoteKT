@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "516322502988",
+    "project_id": "notyapp-7f6fd",
+    "storage_bucket": "notyapp-7f6fd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516322502988:android:7041f1a870ecac65d047e9",
+        "android_client_info": {
+          "package_name": "com.manuelduarte077.notyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516322502988-gchp0ddj7h6jjbddt8ejgtv6dppvr4sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjYZ61A9ocsxPKvtaV01Xt5OQJA1wecLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516322502988-gchp0ddj7h6jjbddt8ejgtv6dppvr4sc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516322502988:android:dfcf3c59ae15d8cad047e9",
+        "android_client_info": {
+          "package_name": "dev.donmanuel.note"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516322502988-gchp0ddj7h6jjbddt8ejgtv6dppvr4sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjYZ61A9ocsxPKvtaV01Xt5OQJA1wecLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516322502988-gchp0ddj7h6jjbddt8ejgtv6dppvr4sc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
