@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Note</string>
+    <string name="app_name">NotyApp</string>
     <string name="completed_tasks">Completed</string>
     <string name="pending_tasks">Pending</string>
     <string name="delete_all">Delete all</string>

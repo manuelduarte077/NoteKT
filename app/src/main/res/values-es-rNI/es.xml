@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotyApp</string>
+    <string name="completed_tasks">Completadas</string>
+    <string name="pending_tasks">Pendientes</string>
+    <string name="delete_all">Eliminar todo</string>
+    <string name="task_deleted">Tarea eliminada</string>
+    <string name="all_task_deleted">Todas las tareas eliminadas</string>
+    <string name="task_updated">Tarea actualizada</string>
+    <string name="summary">Tienes %s tareas pendientes</string>
+    <string name="task_name">Nombre de la tarea</string>
+    <string name="task_description">Descripción de la tarea</string>
+    <string name="task">Tarea</string>
+    <string name="done">Completadas:</string>
+    <string name="category">Categoría</string>
+    <string name="save">Guardar</string>
+    <string name="task_created">Tarea guardada</string>
+    <string name="no_tasks">No se ha creado ninguna tarea.</string>
+    <string name="error_creating_task">No se guardó la tarea</string>
+</resources>

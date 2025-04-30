@@ -13,8 +13,6 @@ room {
     schemaDirectory("$projectDir/schemas")
 }
 
-
-
 android {
     namespace = "com.manuelduarte077.notyapp"
     compileSdk = 35
@@ -23,7 +21,7 @@ android {
         applicationId = "com.manuelduarte077.notyapp"
         minSdk = 24
         targetSdk = 35
-        versionCode = 4
+        versionCode = 5
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
