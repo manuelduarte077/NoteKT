@@ -1,0 +1,3 @@
+Mejoras en el rendimiento
+Soporte para el Español (Nicaragua)
+Mejoras en el Tema de la UI
