@@ -58,10 +58,6 @@ object HomeScreenDes
 @Serializable
 data class TaskScreenDes(val taskId: String? = null)
 
-// Splash Screen
-
-// Onboarding Screen
-
 // SignIn Screen
 @Serializable
 object SignInScreen

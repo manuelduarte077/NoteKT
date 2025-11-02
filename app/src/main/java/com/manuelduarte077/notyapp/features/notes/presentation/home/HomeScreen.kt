@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.manuelduarte077.notyapp.features.notes.presentation.home
 
 import android.widget.Toast
@@ -20,6 +18,7 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -104,7 +103,7 @@ fun HomeScreenRoot(
     )
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
@@ -268,7 +267,12 @@ fun HomeScreen(
             FloatingActionButton(
                 onClick = {
                     onAction(HomeScreenAction.OnAddTask)
-                }
+                },
+                elevation = FloatingActionButtonDefaults.elevation(
+                    defaultElevation = 8.dp,
+                    pressedElevation = 12.dp
+                ),
+
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add Task")
             }
