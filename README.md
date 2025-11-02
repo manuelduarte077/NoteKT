@@ -113,14 +113,3 @@ enum class Category {
     OTHER
 }
 ```
-
-## Instalación y configuración
-
-1. Clona el repositorio:
-```
-git clone https://github.com/manuelduarte077/NoteKT.git
-```
-
-2. Abre el proyecto en Android Studio
-
-3. Ejecuta la aplicación en un emulador o dispositivo físico
